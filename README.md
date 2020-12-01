@@ -29,7 +29,7 @@ write.csv(info_phenotypes, “info_phenotypes.csv”)
 # Filename: Trait.1.variance.components.T.csv
 
 # Calculate heritability estimate with the following command:
-./mmap2018_04_07_13_28.intel --ped pedigree.ped.csv --read_binary_covariance_file grm.bin --trait Trait 1 --phenotype_id IID --phenotype_filename phenotypes.csv --single_pedigree 
+./mmap.2018_04_07_13_28.intel --ped pedigree.ped.csv --read_binary_covariance_file grm.bin --trait Trait_1 --phenotype_id IID --phenotype_filename phenotypes.csv --single_pedigree 
 # Filename: Trait.poly.cov.T.csv
 
 

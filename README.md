@@ -35,7 +35,7 @@ write.csv(info_phenotypes, “info_phenotypes.csv”)
 
 # Perform GWAS with the following command: 
 ./mmap2018_04_07_13_28.intel --ped pedigree.ped.csv --read_binary_covariance_file grm.bin --trait Trait 1 --phenotype_id IID --phenotype_filename phenotypes.csv --binary_genotype_filename genotypes.bin --single_pedigree 
-# Filename: 1.add.spor.cov.T.csv
+# Filename: Trait_1.add.mle.pval.slim.csv
 
 # Use R to generate a Manhattan plot to explain GWAS results with the qqman  function to plot the p-values of each individual SNP against the -log10 (P value) on the y axis. The dotted line signifies the significance level that we are using. In this case, it will be 0.05/3000.
 

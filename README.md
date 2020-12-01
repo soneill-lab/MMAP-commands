@@ -38,6 +38,10 @@ write.csv(info_phenotypes, “info_phenotypes.csv”)
 # Filename: Trait_1.add.mle.pval.slim.csv
 
 # Use R to generate a Manhattan plot to explain GWAS results with the qqman  function to plot the p-values of each individual SNP against the -log10 (P value) on the y axis. The dotted line signifies the significance level that we are using. In this case, it will be 0.05/3000.
+install.packages("qqman")
+manhattan(x, chr = "CHR", bp = "POS", p = "SNP_TSCORE_PVAL", snp = "SNP",
+col = c("red", "blue"), chrlabs = NULL,
+suggestiveline = -log10(1e-05), genomewideline = -log10(5e-08))
 
 
 

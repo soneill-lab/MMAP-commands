@@ -38,21 +38,14 @@ write.csv(info_phenotypes, “info_phenotypes.csv”)
 # Filename: Trait_1.add.mle.pval.slim.csv
 
 # Use R to generate a Manhattan plot to explain GWAS results with the qqman  function to plot the p-values of each individual SNP against the -log10 (P value) on the y axis. The dotted line signifies the significance level that we are using. In this case, it will be 0.05/3000.
+
 install.packages("qqman")
 library(qqman)
-manhattan(x, chr = "CHR", bp = "POS", p = "SNP_TSCORE_PVAL", snp = "SNP",
-col = c("red", "blue"), chrlabs = NULL,
-suggestiveline = -log10(1e-05), genomewideline = -log10(5e-08))
 
-# NOTE: Upon attempting to construct the Manhattan plot, the program had told me that the Chromosome name was not found. I then tried colnames() to read me the column names, upon which it told me that they were NULL. I did not know why, since the appropriate header names were already present in the file. I reviewed the manual and attempted to use the following commands: 
-colnames(cbind(1,3:4,15)) 
+gwas<- read.csv("<filename>")
+manhattan(gwas, chr = "CHR", bp = "POS", p = "SNP_TSCORE_PVAL", snp = "SNP",
+col = c("red", "blue"), chrlabs = NULL, suggestiveline = -log10(1e-05), genomewideline = -log10(0.05/nrows(gwas)))
 
-# to which the columns were said to be null. I then tried the following: 
-colnames(cbind(1,3:4, 15), prefix= "SNP", do.NULL=FALSE) 
-
-# to which the names generated were only SNP1, SNP2, and SNP3. Because I need the file to have all the necessary column names( SNP, CHR, BP, and PValue,) I did the following: 
-
-"colnames(<filename>)<- c("SNPNAME", "RSNUM", "CHR", "POS", "NON_CODED_ALLELE", "EFFECT_ALLELE" "NON_CODED_COUNT", "EFFECT_COUNT", "NUM_OBSERVED", "NUM_MISSING", "EFFECT_CELL_FREQ", "MINOR_CELL_FREQ", "BETA_SNP" , "SE_SNP","SNP_TSCORE_PVAL","SNP_VAR"
                   
 
 

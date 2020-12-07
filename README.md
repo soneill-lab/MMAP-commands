@@ -43,18 +43,8 @@ install.packages("qqman")
 library(qqman)
 
 gwas<- read.csv("<filename>")
-\# To double check that the appropriate column names are present: colnames(gwas)
-\# Generate the manhattan plot  
+  \# To double check that the appropriate column names are present: colnames(gwas)
+  \# Generate the manhattan plot  
 pdf("filename")
 manhattan(gwas, chr = "CHR", bp = "POS", p = "SNP_TSCORE_PVAL", snp = "SNP", col = c("red", "blue"), chrlabs = NULL, suggestiveline = -log10(1e-05), genomewideline=-log10(0.05/nrows(gwas)))
-dev.off() 
-
-
-
-
-
-
-                  
-
-
-
+dev.off()

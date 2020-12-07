@@ -46,6 +46,16 @@ gwas<- read.csv("<filename>")
 manhattan(gwas, chr = "CHR", bp = "POS", p = "SNP_TSCORE_PVAL", snp = "SNP",
 col = c("red", "blue"), chrlabs = NULL, suggestiveline = -log10(1e-05), genomewideline = -log10(0.05/nrows(gwas)))
 
+#To upload R plot to imguR
+dev.off() 
+
+install.packages("imguR")
+library(imguR)
+
+
+
+
+
                   
 
 
